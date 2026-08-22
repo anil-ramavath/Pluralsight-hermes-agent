@@ -1,5 +1,4 @@
-
-m fastapi import FastAPI, Request
+from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import requests
 import os
@@ -188,4 +187,6 @@ async def chat(request: Request):
             status_code=500,
 
             content={
-            
+                "error": str(e)
+            }
+        )
